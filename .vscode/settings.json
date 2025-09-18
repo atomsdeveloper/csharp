@@ -14,6 +14,16 @@
   "workbench.editor.enablePreview": false,
 
   "explorer.sortOrder": "modified",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": ["comment", "keyword", "variable.other.readwrite"],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
 
   // 🛠 Formatação e Lint
   "editor.defaultFormatter": "esbenp.prettier-vscode",
