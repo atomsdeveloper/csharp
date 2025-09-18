@@ -1,0 +1,14 @@
+# Build outputs
+bin/
+obj/
+
+# Rider / VSCode / VS
+.vs/
+.idea/
+
+# Dependências locais
+*.user
+*.suo
+*.swp
+*.tmp
+*.log

@@ -1,3 +1,9 @@
+// Switch é bem parecido com 'if', onde determinados dados serão executados, atribuidos ou armazenados caso a condição seja satisfeita.
+// Diferentemente do 'if' o 'switch' só deve executar valores que podem 'verdadeiros'.
+// Isto é, todos os valores presentes em 'case' podem existir, não são dados de erro ou coisa do tipo.
+// São opções que realmente pode ser acessadas, a questão é que o 'switch' apenas verifica qual foi a 'opção' selecionada.
+// Como pode ver no exemplo abaixo, nós temos 4 opções de escolha, caso a opção não seja nenhuma das 4 o programa cai no 'default'.
+
 namespace Switch
 {
   class SwitchCase
@@ -13,6 +19,8 @@ namespace Switch
       System.Console.WriteLine("Como deseja viajar? [A]avião [M]moto [C]carro [O]õnibus");
       option = char.Parse(System.Console.ReadLine());
 
+      // Aqui ao passar 'options', é determinado que somente podemos ter 4 opções (A, M, C e O).
+      // Dai en diante o 'case' se preucupa em saber qual a 'option' atual.
       switch (option)
       {
         case 'a':
@@ -43,9 +51,10 @@ namespace Switch
           System.Console.WriteLine("Sua opção é {0}, o preço total é {1,0:c}, o tempo de viagem é de {2} e tem {3} paradas.", option, price, time, stoped);
           break;
 
+        // Como dito acima, caso nenhuma 'options' valida seja passada o código cai aqui por padrão. ('default').
         default:
           System.Console.WriteLine("Opção inválida, tente novamente!");
-          break;
+          break; // Finaliza a execução após encontrar a 'option' presentes nos 'case' ou aqui no 'default'.
       }
     }
   }

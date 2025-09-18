@@ -1,3 +1,7 @@
+// Goto é usado em programas C# para retorna em um trecho de código caso uma condição seja satifeita, ou algo parecido.
+// Isto é, dependendo das informações que o programa obteve o código é retornado para uma determinada aréa do programa.
+// Isso faz com que o programa termine somente se a condição não for mais satisfeita (que é o nosso caso neste exemplo).
+
 namespace Goto
 {
   class Go
@@ -7,7 +11,8 @@ namespace Goto
       int option;
       char shouldContinue;
 
-      start:
+    // Isso indica para o 'go to' de onde o programa deve reiniciar.
+    start:
       System.Console.Clear();
 
       System.Console.WriteLine("Dígite um valor: ");
@@ -24,8 +29,11 @@ namespace Goto
 
           if (shouldContinue == 's')
           {
+            // Vai para o inicio do programa caso a condição seja satisfeita.
             goto start;
           }
+          // Finaliza o programa caso a condição não for satisfeita.
+          System.Console.WriteLine("Saiu do sistema.");
           break;
       }
 
