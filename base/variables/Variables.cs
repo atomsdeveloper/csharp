@@ -41,6 +41,8 @@ namespace Variables
 
       byte bytes = 08; // 8 Bytes
 
+      long a;
+
       string text = "Lorem ipsum";
 
       // Variável sem tipo.
