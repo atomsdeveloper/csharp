@@ -5,28 +5,28 @@
 
 namespace While
 {
-  class While
-  {
-    static void Main()
+    class While
     {
-      int value;
-      int[] array = new int[10];
+        static void Main()
+        {
+            int value;
+            int[] array = new int[10];
 
-      // O 'Length' sempre retorna o tamanho total do 'array' que neste caso é 10, porém os número de 'index' vão somente até o 9.
-      // Pois como já sabemos um array sempre tem 'index' inciando da posição 0.    
-      value = array.Length - 1;
+            // O 'Length' sempre retorna o tamanho total do 'array' que neste caso é 10, porém os número de 'index' vão somente até o 9.
+            // Pois como já sabemos um array sempre tem 'index' inciando da posição 0.
+            value = array.Length - 1;
 
-      // Este loop se lê 'enquanto', então enquanto o 'value' for maior que 0...
-      // O bloco de código do 'while' será executado.
-      while (value > 0)
-      {
-        array[value] = value;
-        System.Console.WriteLine("Array: {0}", array[value]);
-        // Para decrementar mais um ao 'value' deve-se ser inserido dentro do bloco de código. 
-        value--;
-      }
+            // Este loop se lê 'enquanto', então enquanto o 'value' for maior que 0...
+            // O bloco de código do 'while' será executado.
+            while (value > 0)
+            {
+                array[value] = value;
+                System.Console.WriteLine("Array: {0}", array[value]);
+                // Para decrementar mais um ao 'value' deve-se ser inserido dentro do bloco de código.
+                value--;
+            }
 
-      System.Console.WriteLine("End.");
+            System.Console.WriteLine("End.");
+        }
     }
-  }
 }

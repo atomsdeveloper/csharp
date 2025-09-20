@@ -7,42 +7,43 @@
 
 namespace Conditional
 {
-  class If
-  {
-    static void Main()
+    class If
     {
-      int nota, notaTwo;
-      int result;
-      string text;
-
-      System.Console.WriteLine("Dígite uma nota: ");
-      nota = int.Parse(System.Console.ReadLine());
-
-      System.Console.WriteLine("Dígite outra nota: ");
-      notaTwo = int.Parse(System.Console.ReadLine());
-
-      result = (nota + notaTwo) / 2;
-
-      // Expressões/Condições if que podem ser verdadeiras ou falsas. (caso falso passa para a próxima condição.).
-      if (result < 50)
-      {
-        text = "reprovado";
-      }
-      else if (result < 60)
-      {
-        text = "de recuperação";
-      }
-      else
-      {
-        // Exemplo de if aninhado. (que nada mais é do que um if dentro de outro if.).
-        if (result > 90)
+        static void Main()
         {
-          text = "parabéns";
-        }
-        text = "aprovado";
-      }
+            int nota,
+                notaTwo;
+            int result;
+            string text;
 
-      System.Console.WriteLine("Aluno {0}.", text);
+            System.Console.WriteLine("Dígite uma nota: ");
+            nota = int.Parse(System.Console.ReadLine());
+
+            System.Console.WriteLine("Dígite outra nota: ");
+            notaTwo = int.Parse(System.Console.ReadLine());
+
+            result = (nota + notaTwo) / 2;
+
+            // Expressões/Condições if que podem ser verdadeiras ou falsas. (caso falso passa para a próxima condição.).
+            if (result < 50)
+            {
+                text = "reprovado";
+            }
+            else if (result < 60)
+            {
+                text = "de recuperação";
+            }
+            else
+            {
+                // Exemplo de if aninhado. (que nada mais é do que um if dentro de outro if.).
+                if (result > 90)
+                {
+                    text = "parabéns";
+                }
+                text = "aprovado";
+            }
+
+            System.Console.WriteLine("Aluno {0}.", text);
+        }
     }
-  }
 }

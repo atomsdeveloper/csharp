@@ -10,20 +10,20 @@
 
 namespace Constants
 {
-  class Constants
-  {
-    // Esta váriavel só tem seu valor atribuido após o inicio do programa. 'runtime'. Ou seja, seu valor só é conhecido em tempo de execução.
-    static readonly int year = System.DateTime.Now.Year;
-
-    // Aqui a 'const' sempre precisa ser declarada e inicializada. Não pode depender de 'runtime'.
-    // Está variável é conhecida e pode ser acessada em toda a classe.
-    const string text = "text"; // OK
-
-    static void Main()
+    class Constants
     {
-      const string name = "Renan";
+        // Esta váriavel só tem seu valor atribuido após o inicio do programa. 'runtime'. Ou seja, seu valor só é conhecido em tempo de execução.
+        static readonly int year = System.DateTime.Now.Year;
 
-      System.Console.Write("\n {0} \n {1} \n {2} \n", name, year, text);
+        // Aqui a 'const' sempre precisa ser declarada e inicializada. Não pode depender de 'runtime'.
+        // Está variável é conhecida e pode ser acessada em toda a classe.
+        const string text = "text"; // OK
+
+        static void Main()
+        {
+            const string name = "Renan";
+
+            System.Console.Write("\n {0} \n {1} \n {2} \n", name, year, text);
+        }
     }
-  }
 }

@@ -6,24 +6,25 @@
 // Isto é, como queremos somar valores, precisamos converter de 'string' para 'int', então com 'int' usamos o método 'Parse' que é um método.
 namespace Keyborad
 {
-  class ReadKeyboard
-  {
-    static void Main()
+    class ReadKeyboard
     {
-      int value, valueTwo, result;
+        static void Main()
+        {
+            int value,
+                valueTwo,
+                result;
 
-      System.Console.Write("Dígite um valor: ");
-      // Isto é, o valor recebido de 'Write' linha acima, será lido pela 'ReadLine' e armazenado dentro de 'value' fazendo o 'Parse' de 'string' para 'int'. 
-      value = int.Parse(System.Console.ReadLine());
+            System.Console.Write("Dígite um valor: ");
+            // Isto é, o valor recebido de 'Write' linha acima, será lido pela 'ReadLine' e armazenado dentro de 'value' fazendo o 'Parse' de 'string' para 'int'.
+            value = int.Parse(System.Console.ReadLine());
 
-      System.Console.Write("Dígite outro valor: ");
-      // Isto é, o valor recebido de 'Write' linha acima, será lido pela 'ReadLine' e armazenado dentro de 'value' fazendo o 'Parse' de 'string' para 'int'. 
-      valueTwo = int.Parse(System.Console.ReadLine());
+            System.Console.Write("Dígite outro valor: ");
+            // Isto é, o valor recebido de 'Write' linha acima, será lido pela 'ReadLine' e armazenado dentro de 'value' fazendo o 'Parse' de 'string' para 'int'.
+            valueTwo = int.Parse(System.Console.ReadLine());
 
-      result = value + valueTwo;
+            result = value + valueTwo;
 
-      System.Console.WriteLine("\n A soma dos valores dígitados é: {0}", result);
-
+            System.Console.WriteLine("\n A soma dos valores dígitados é: {0}", result);
+        }
     }
-  }
 }

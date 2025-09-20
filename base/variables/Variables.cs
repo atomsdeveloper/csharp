@@ -1,5 +1,5 @@
 // Uma váriavel é uma posição reservada na memória 'RAM' para armazenar valores e resultados.
-// Isto é, variáveis são como *'Caixa' vazias, dentro dessas caixas podemos armazenar/inserir *'Valor'. Fora da caixa temos a 'etiqueta' para inferir o *'Tipo' do valor dentro da caixa. 
+// Isto é, variáveis são como *'Caixa' vazias, dentro dessas caixas podemos armazenar/inserir *'Valor'. Fora da caixa temos a 'etiqueta' para inferir o *'Tipo' do valor dentro da caixa.
 // Isso acontente pois ao declarar uma variavél é criado uma espécie de ponterio, que por sua vez aponta (rs) para uma valor reservado na memória 'RAM' onde será armazenado.
 
 // Ex:
@@ -23,47 +23,50 @@
 // Byte -> 8bytes
 // String -> Array de Char
 // Bool -> True or False
-// Double -> 
+// Double ->
 
 // TODO: Pesquisar demais tipos.
 
 namespace Variables
 {
-  class VariablesDotnet
-  {
-    static void Main()
+    class VariablesDotnet
     {
-      int value = 0;
-      char letter = 'R';   // 1 Bit
-      float price = 1.5f;
-      double sale = 5.50;
-      bool result = 10 < 5; // True of False
+        static void Main()
+        {
+            int value = 0;
+            char letter = 'R'; // 1 Bit
+            float price = 1.5f;
+            double sale = 5.50;
+            bool result = 10 < 5; // True of False
 
-      byte bytes = 08; // 8 Bytes
+            byte bytes = 08; // 8 Bytes
 
-      long a;
+            long a;
 
-      string text = "Lorem ipsum";
+            string text = "Lorem ipsum";
 
-      // Variável sem tipo.
-      // Declaração com 'var'.
-      var noType;
-      // Rebece um tipo automáticamente após receber um valor.
-      noType = "Now your type is string.";
-      noType = 1; // Agora seu tipo é um número (pode ser alterado o valor pois é uma declaração com 'var'.).
+            // Variável sem tipo.
+            // Declaração com 'var'.
+            var noType;
+            // Rebece um tipo automáticamente após receber um valor.
+            noType = "Now your type is string.";
+            noType = 1; // Agora seu tipo é um número (pode ser alterado o valor pois é uma declaração com 'var'.).
 
-      // Diferentemente de um 'const' que seu valor nunca pode mudar.
-      // Deve ser sempre inicializada. (runtime).
-      // E sempre conter seu tipo definido.
-      const string car = "Mustang";
+            // Diferentemente de um 'const' que seu valor nunca pode mudar.
+            // Deve ser sempre inicializada. (runtime).
+            // E sempre conter seu tipo definido.
+            const string car = "Mustang";
 
-      // car = "Ford"; Error -> The value of const cannot be change.
+            // car = "Ford"; Error -> The value of const cannot be change.
 
-      // Delaração de multiplas variáveis.
-      int age, year, day;
-      string name, lastName;
+            // Delaração de multiplas variáveis.
+            int age,
+                year,
+                day;
+            string name,
+                lastName;
 
-      System.Console.WriteLine(noType);
+            System.Console.WriteLine(noType);
+        }
     }
-  }
 }

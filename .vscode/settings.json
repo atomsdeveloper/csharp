@@ -26,7 +26,7 @@
   },
 
   // 🛠 Formatação e Lint
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
 
   "editor.codeActionsOnSave": {
@@ -34,10 +34,12 @@
   },
 
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.bracketSameLine": true
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.bracketSameLine": true
   },
   "[xml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

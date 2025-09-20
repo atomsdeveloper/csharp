@@ -17,7 +17,7 @@
 // 00010100 -> Este é o resultado em bits da operação em 'bitwise' feita na linha acima.
 
 // Veja os bits representados na tabela, como pode notar, usei os bits do valor decimal 10 e fiz o 'bitwise' para esquerda
-// ... que dobra o valor, sendo assim ele retorna o valor dobrado em bits que representa o valor decimal 20. 
+// ... que dobra o valor, sendo assim ele retorna o valor dobrado em bits que representa o valor decimal 20.
 
 // O mesmo ocorre para o deslocamento para a direita, sendo que ele diminue pela metade.
 // Usando o mesmo exemplo acima, ficaria:
@@ -26,22 +26,26 @@
 
 // 00001010 >> -> Aqui estou fazendo um 'bitwise' para a direita, ou seja, será diminuido pela metade o valor dos bits.
 // 00000101 -> Este é o resultado em bits da operação em 'bitwise' feita na linha acima.
-// ... diminue pela metade o valor, sendo assim, ele retorna o valor dos bits pela metade que representa o valor decimal 5. 
+// ... diminue pela metade o valor, sendo assim, ele retorna o valor dos bits pela metade que representa o valor decimal 5.
 
 namespace Bitwise
 {
-  class Bit
-  {
-    static void Main()
+    class Bit
     {
-      int valueBitwiseLeft = 10;
-      int valueBitwiseRight = 20;
+        static void Main()
+        {
+            int valueBitwiseLeft = 10;
+            int valueBitwiseRight = 20;
 
-      // O valor '1' após o uso do 'bitwise' indica a quantidade de vezes que será dobrado ou diminuido pela metade o valor armazenado em 'valueBitwiseLeft'.
-      valueBitwiseLeft = valueBitwiseLeft << 1;
-      valueBitwiseRight = valueBitwiseRight >> 2;
+            // O valor '1' após o uso do 'bitwise' indica a quantidade de vezes que será dobrado ou diminuido pela metade o valor armazenado em 'valueBitwiseLeft'.
+            valueBitwiseLeft = valueBitwiseLeft << 1;
+            valueBitwiseRight = valueBitwiseRight >> 2;
 
-      System.Console.WriteLine("Valor de valueBitwiseLeft: {0} \n Valor de valueBitwiseRight: {1}", valueBitwiseLeft, valueBitwiseRight);
+            System.Console.WriteLine(
+                "Valor de valueBitwiseLeft: {0} \n Valor de valueBitwiseRight: {1}",
+                valueBitwiseLeft,
+                valueBitwiseRight
+            );
+        }
     }
-  }
 }

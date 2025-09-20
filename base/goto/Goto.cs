@@ -4,40 +4,38 @@
 
 namespace Goto
 {
-  class Go
-  {
-    static void Main()
+    class Go
     {
-      int option;
-      char shouldContinue;
+        static void Main()
+        {
+            int option;
+            char shouldContinue;
 
-    // Isso indica para o 'go to' de onde o programa deve reiniciar.
-    start:
-      System.Console.Clear();
+            // Isso indica para o 'go to' de onde o programa deve reiniciar.
+            start:
+            System.Console.Clear();
 
-      System.Console.WriteLine("Dígite um valor: ");
-      option = int.Parse(System.Console.ReadLine());
+            System.Console.WriteLine("Dígite um valor: ");
+            option = int.Parse(System.Console.ReadLine());
 
-      switch (option)
-      {
-        case 1:
-          System.Console.WriteLine("Parabéns, este é o número da sorte.");
-          break;
-        default:
-          System.Console.WriteLine("Aaaa, tente novamente! [S]sim [N]não");
-          shouldContinue = char.Parse(System.Console.ReadLine());
+            switch (option)
+            {
+                case 1:
+                    System.Console.WriteLine("Parabéns, este é o número da sorte.");
+                    break;
+                default:
+                    System.Console.WriteLine("Aaaa, tente novamente! [S]sim [N]não");
+                    shouldContinue = char.Parse(System.Console.ReadLine());
 
-          if (shouldContinue == 's')
-          {
-            // Vai para o inicio do programa caso a condição seja satisfeita.
-            goto start;
-          }
-          // Finaliza o programa caso a condição não for satisfeita.
-          System.Console.WriteLine("Saiu do sistema.");
-          break;
-      }
-
-
+                    if (shouldContinue == 's')
+                    {
+                        // Vai para o inicio do programa caso a condição seja satisfeita.
+                        goto start;
+                    }
+                    // Finaliza o programa caso a condição não for satisfeita.
+                    System.Console.WriteLine("Saiu do sistema.");
+                    break;
+            }
+        }
     }
-  }
 }

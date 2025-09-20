@@ -1,7 +1,7 @@
 class Person
 {
-  static void Main()
-  {
-    System.Console.WriteLine("Olá.");
-  }
+    static void Main()
+    {
+        System.Console.WriteLine("Olá.");
+    }
 }
