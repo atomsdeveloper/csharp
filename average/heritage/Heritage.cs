@@ -17,7 +17,7 @@ namespace Heritage {
       this.cnh = cnh;
     }
 
-    // Métodos GET para pegar os valores da classe.
+    // Métodos GET para pegar os valores da classe quando os atributos não são acessíveis fora da classe.
     public int getWheels() {
       return wheels;
     }
@@ -42,12 +42,13 @@ namespace Heritage {
   // Herança deve possuir uma classe base e uma classe derivada.
   // A classe base neste caso é 'Vehicle' e a classe derivada 'Car'.
   class Car : Vehicle {
-    public string type;
+    // Repare que a classe 'Car' pode ter seus próprios atributos.
+    public string type; 
     public string color;
 
-    // Para receber valores da instância da classe 'Car' e passar para o 'constructor' da classe base.
-    // Deve ser recebido todos os valores dentro do 'constructor' de 'Car' e no método construtor (abaixo) usa-se a diretiva 'base'.
-    // Essa diretiva 'base' indica quais são os método recebidos no constructor de 'Car' que deverão ser passados para o 'constructor' da classe base 'Vehicle'.
+    // Este 'constructor' é usado para receber valores da instância de 'Car' e passar para o 'constructor' da classe base.
+    // Na instância de 'Car' deve ser passado os valores e no método construtor (abaixo) usa-se a diretiva 'base' para definir quais são os params que deverão ser da classe derivada.
+    // Essa diretiva 'base' indica quais são os atributos recebidos no constructor de 'Car' que deverão ser passados para o 'constructor' da classe base 'Vehicle'.
     public Car(int wheels, string engine, bool cnh, string type, string color) : base(wheels, engine, cnh) {
       this.type = type;
       this.color = color;

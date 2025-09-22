@@ -8,16 +8,14 @@
 
 namespace Static {
   
-   public class Enemy
-  {
+   public class Enemy {
     // Definido o atributo como 'static'.
     // Isto é, caso seja necessário alterar o valor de 'active' de todos os objetos instânciados á partir dessa classe.
-    static public bool active = false;
+    static bool active = false;
     public string name = "Madara";
 
     public Enemy(string name)
     {
-      active = true;
       this.name = name;
     }
 
@@ -29,11 +27,11 @@ namespace Static {
 
   // Modificadores Static, classe que não permite a instância de seus objetos e seus membros devem ser 'static'.
   static class Players {
-    public static string name = "Renan";
-    public static bool life = false;
+    static string name = "Renan";
+    static bool life = false;
 
     // Não pode ter 'constructor' então usamos métodos.
-    static public void Init(string nameParam, bool lifeParam) {
+    static void Init(string nameParam, bool lifeParam) {
       this.name = nameParam;
       this.life = lifeParam;
     }
@@ -43,7 +41,7 @@ namespace Static {
     }
 
     static void Main() {
-      Players.Info();
+      Players.Info(); // Acessando método de uma classe estática.
       Players.Init("Jiraya", false);
       // Note que isso altera os valores da classe 'Players', pois estamos acessando diretamente o objeto.
       // Diferentemente de instâncias de classes que altera os valores somente na instância.
