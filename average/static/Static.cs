@@ -19,13 +19,17 @@ namespace Static {
       this.name = name;
     }
 
-    public void Info()
-    {
+    // Definido o métodos como 'static'.
+    public static int Double(int value) {
+      return value * 2;
+    }
+    
+    public void Info() {
       System.Console.WriteLine("Enemy: {0} / Active: {1}.", name, active);
     }
   }
 
-  // Modificadores Static, classe que não permite a instância de seus objetos e seus membros devem ser 'static'.
+  // Modificadores Static, classe que não permite a instância de seus objetos, seus membros devem ser 'static'.
   static class Players {
     static string name = "Renan";
     static bool life = false;
@@ -58,6 +62,10 @@ namespace Static {
       // Isso faz com que o valor de 'active' seja alterando em todos os objetos que intânciam a classe "Enemy'.
       // Mesmo seguimento da classe 'static' 'Players' onde tudo é estático, sendo assim ão tem instância, somente atributos/métodos de classe.
       Enemy.active = true;
+
+      // O mesmo ocorre para métodos 'static', não preciso instânciar a classe, posso usar diretamente.
+      int result = Enemy.Double(10);
+      System.Console.WriteLine(result);
 
       Enemy.Info();
     }

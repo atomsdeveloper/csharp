@@ -15,23 +15,19 @@
 // Virtual   ->  O método pode ser redefinido em uma classe derivada.
 // Static    ->  O método pode ser chamado mesmo sem a instância de um objeto.
 
-namespace Objects
-{
+namespace Objects {
     // Modificadores Abstract, classe que serve como base para outra classe, não permite que seus métodos ou objetos sejam intânciados.
-    public class Players
-    {
+    public class Players {
         // Epecifícadores Public, podem ser acessados em nenhum tipo de restrição.
         public string name = "Naruto";
         public bool life = true;
     }
 
     // Modificadores Public, sem restrições de acesso ao seus métodos e atributos.
-    public class Classes
-    {
+    public class Classes {
         // Especifícadores Static, os método podem ser chamados mesmo que não haja a instância de um objeto.
-        static void Main()
-        {
-            // Criando um novo objeto à partir da classse 'Palyers'. Juntamente com todos os atributos criados.
+        static void Main() {
+            // Criando um novo objeto à partir da classse 'Players'. Juntamente com todos os atributos criados.
             // O operador 'new' indica que será craiado um novo endereço de memória para 'player' com todos os atributos da classe.
             Players player = new Players();
 

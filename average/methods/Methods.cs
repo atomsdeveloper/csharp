@@ -1,34 +1,28 @@
 ﻿// Arquivo para listar os método mais usados de um array e para criar nossos próprios métodos de classe.
 
-namespace Methods
-{
-    class MethodsArray
-    {
+namespace Methods {
+    class MethodsArray {
         // Método principal da classe 'MethodsArray'. Este método sempre será executado após instanciar está classe ou executar este arquivo.
         // Todas as classes por padrão herdam do 'System.Array' ou métodos para vetores.
-        static void Main()
-        {
+        static void Main() {
             // Vetores
             int[] vetor = new int[3];
             int[] vetorCopy = new int[3];
             int[] vetorCopyTo = new int[2];
 
             // Matriz
-            string[,] matriz = new string[1, 2]
-            {
+            string[,] matriz = new string[1, 2] {
                 { "Renan", "Ruth" },
             };
 
             // Inserindo valores aleatórios no 'vetor'.
             Random random = new Random();
-            for (int i = 0; i < vetor.Length; i++)
-            {
+            for (int i = 0; i < vetor.Length; i++) {
                 vetor[i] = random.Next(10);
             }
 
             // Ler os valores adicionados no 'vetor'.
-            foreach (int item in vetor)
-            {
+            foreach (int item in vetor) {
                 System.Console.WriteLine(item);
             }
 
@@ -44,8 +38,7 @@ namespace Methods
             // Onde 'Array.Copy' é um método estático desta classe.
             // 'Copy' é um dos utilitários fornecidos por 'Array'.
             Array.Copy(vetor, vetorCopy, vetor.Length); // public static void Copy(array_origem, array_destino, num_elementos).
-            foreach (int item in vetorCopy)
-            {
+            foreach (int item in vetorCopy) {
                 System.Console.WriteLine(item);
             }
 
@@ -53,8 +46,7 @@ namespace Methods
             // Este é mais um utilitário 'CopyTo' usado para copiar de um 'vetor' para o outro.
             // Onde 'vetorCopy.CopyTo' é um método da intãncia 'vetorCopy' herdado de 'System.Array'.
             vetorCopy.CopyTo(vetorCopyTo, 1); // public void CopyTo(array_destino, position_init).
-            foreach (int item in vetorCopy)
-            {
+            foreach (int item in vetorCopy) {
                 System.Console.WriteLine(item);
             }
 
@@ -133,18 +125,15 @@ namespace Methods
         // Vamos passar pelos dois exemplos.
 
         // Método que não retorna nada 'void' e não recebe parâmetros '()'.
-        static void Grettings()
-        {
+        static void Grettings() {
             System.Console.WriteLine("Olá");
         }
 
         // Método que retona um valor do tipo 'Int' e recebe parâmetros (operando, primeiro valor, segundo valor).
         // Também conhecido como método de passagem por valor.
-        static int Calculate(char operand, int oneValue, int twoValue)
-        {
+        static int Calculate(char operand, int oneValue, int twoValue) {
             // Antes de retornar o valor é feita a verificação de que tipo de operação será realizada.
-            switch (operand)
-            {
+            switch (operand) {
                 case '+':
                     return oneValue + twoValue;
                     break;
@@ -170,8 +159,7 @@ namespace Methods
         // Para declarar esta forma de uso é preciso passar a diretiva 'ref' para o paramentro recebido no método.
         // Isto é, quando se tem um método que não retornar nada, ou seja, nçao retorna o valor alterado, porém ele referência este valor na memória.
         // Ao vericar o valor alterado após a chamada do método, pode se notar que o valor foi alterado por referência.
-        static void Double(ref int value)
-        {
+        static void Double(ref int value) {
             value *= 2;
         }
 
@@ -179,8 +167,7 @@ namespace Methods
         // Parecido com 'ref' na forma de usar mas tem outro tipo de funcionlidade.
         // Ou seja, não retonamos mais de um dado de fato e sim passamos para uma variável já existente um novo valor.
         // Isto é, usando a diretiva 'out' indica que terá mais de um retorno nesse método onde 'rest' que é a variável que tem 'out' será essa intermediadora.
-        static int Divide(int dividend, int divider, out int rest)
-        {
+        static int Divide(int dividend, int divider, out int rest) {
             int quotient = dividend / divider;
 
             rest = dividend % divider; // A váriavel de saída 'rest' deve receber um valor, que neste caso é o resto da divisão.
@@ -191,8 +178,7 @@ namespace Methods
         // Aqui vamos usar uma Sintax Sugar para chamdas de métodos com um número variável de argumentos.
         // Neste caso só pode haver um param por método e ele deve ser o último argumento passado para o método.
         // Internamente ele é um 'Array' onde só muda a forma como é chamado o método.
-        static int ParamsInt(params int[] vetor)
-        {
+        static int ParamsInt(params int[] vetor) {
             int result = 0;
             bool valid = true;
             bool hasOnlyOne;
@@ -202,18 +188,15 @@ namespace Methods
             valid = vetor.Length > 0;
             hasOnlyOne = vetor.Length == 1;
 
-            if (!valid)
-            {
+            if (!valid) {
                 System.Console.WriteLine("None params found");
             }
 
-            if (hasOnlyOne)
-            {
+            if (hasOnlyOne) {
                 System.Console.WriteLine("Only one params found");
             }
 
-            for (int i = 0; i < vetor.Length; i++)
-            {
+            for (int i = 0; i < vetor.Length; i++) {
                 result += vetor[i];
             }
 

@@ -32,10 +32,29 @@ namespace Constructor
             this.name = name;
         }
 
+        // Este é um exmplo de sobrecarga de métodos.
+        // Pode receber vários 'params' de forma aleatória e que tem o mesmo tipo.
+        public int Sum(params int[] n) {
+            int result = 0;
+            for (var index = 0; n.Lenght > index; index++) {
+                result += n[index];
+            }
+            return result;
+        }
+
+        // Este é um exmplo de sobrecarga de métodos.
+        // Pode receber vários 'params' de forma aleatória e que tem o mesmo tipo.
+        public double Sum(params double[] n) {
+            double result = 0.0;
+            for (var index = 0; n.Lenght > index; index++) {
+                result += n[index];
+            }
+            return result;
+        }
+
         // Definindo um 'destrutor' para a classe 'Players'.
         // Antecedido por um '~' e deve ter o mesmo no me da classe.
-        ~Players()
-        {
+        ~Players() {
             System.Console.WriteLine("Destructor call.");
         }
 
@@ -50,8 +69,7 @@ namespace Constructor
     public class Classes
     {
         // Especifícadores Static, os método podem ser chamados mesmo que não haja a instância de um objeto.
-        static void Main()
-        {
+        static void Main() {
             // Criando um novo objeto à partir da classse 'Players'. Passando juntamente ao seu constructor os dados necessários.
             // O operador 'new' indica que será craiado um novo endereço de memória para 'player' com todos os atributos da classe.
             // Os params passados para a instância da classe serão armazeandos nas suas respectivas variáveis graças ao 'constuctor'.
@@ -62,6 +80,10 @@ namespace Constructor
 
             player.Info();
             players.Info();
+
+            // Note que são os mesmos métodos, porém com sobrecarga, onde eu posso ter diferentes 'args' passados ou tipos.
+            double resultDouble = players.Sum(1.4, 1.5);
+            int resultInt = player.Sum(2, 5);
         }
     }
 }
