@@ -1,7 +1,7 @@
 ﻿// Dictionary representa uma coleção de chaves e valores.
 // public class Dictionary<TKey,TValue> : 
-// Onde 'TKey' represeta o tipo da chave e 'TValue' representa o tipo do valor. 
-using System.Collecion.Generic;
+// Onde 'TKey' representa o tipo da chave e 'TValue' representa o tipo do valor. 
+using System.Collections.Generic;
 
 namespace Dictionary {
   class Dictionary {

@@ -32,15 +32,11 @@ namespace Matriz
             // E todo valor passado dentro dessa segunda chave que representa a linha, será armazenado nas colunas da 'matriz'.
 
             //                                      0L          1L
-            int[,] matrizInit = new int[2, 2]
-            {
-                { 10, 20 },
-                { 30, 40 },
-            };
+            int[,] matrizInit = new int[2, 2] { { 10, 20 }, { 30, 40 }};
             //                                    0C  1C      0C  1C
 
             System.Console.WriteLine(matrizInit[1, 1]); // 40
-            //                                  1L 1C                                       W
+            //                                  1L 1C                                       
         }
     }
 };
