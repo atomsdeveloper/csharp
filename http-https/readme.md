@@ -38,9 +38,49 @@
 > Novos métodos `HTTP` foram adicionados, que introduziram `PUT`, `PATCH`, `OPTIONS` e `DELETE`.
 > Indentificação do nome do host nesta versão se tornou obrigatório.
 > Introduzido conexões persistentes, ou seja, as conexões não eram fechadas por padrão o que permitia múltiplas requisições sequenciais, então para fechar as conexões, o cabeçalho `Connection: close` precisava estar disponivel na requisição para encerrar a conexão com segurança.
-> Pipelining fora introduzido, onde o cliente poderia enviar várias requisições ao server sem esperar pela resposta do server na mesma conexão, e o server teria que enviar a resposta na mesma sequência em que as requisições foram recebidas
+> Esta versão incluia também auntenticação `digest` e `proxy.` como: `Cache`, `Intervalo de Bytes`, `Conjunto de Caracteres`, `Negociação de Linguagem`, `Cookies do Cliente`, `Suporte de comprenssão Aprimorado`, `Novos Códigos de Status` e mais.
+
+> `Pipelining` fora introduzido, onde o cliente poderia enviar várias requisições ao server sem esperar pela resposta do server na mesma conexão, e o server teria que enviar a resposta na mesma sequência em que as requisições foram recebidas
+> Como o cliente identifica que este é o ponto em que o download da primeira resposta é concluído e o conteúdo e quando deve começar o conteúdo da próxima resposta?
+> Para isso deve haver um cabeçalho `Content-Length`.
 
 ### Content-Length
 
-> Como o cliente identifica que este é o ponto em que o download da primeira resposta é concluído e o conteúdo e quando deve começar o conteúdo da próxima resposta?
-> Para resolver isso usa-se o `Content-Length` presente, onde o cliente indentifica onde a resposta termina e começar a aguardar a próxima resposta.
+> Usa-se o `Content-Length` presente, onde o cliente indentificar onde a resposta termina e começar a aguardar a próxima resposta. (de forma sequencial).
+
+### Tranferências em Blocos
+
+> No caso de conteúdo dinâmico, quando o servidor não consegue descobrir o `Content-Length` no ínicio da transmissão, ele pode começar a enviar o conteúdo em partes (bloco por bloco) e adicionar o `content-Length` para cada bloco quando enviado.
+> Após todos os bloco serem enviados, ou seja, a transmissão completa foi concluída, é enviado um bloco vazio com o seu `Content-length` definido como zero para identificar para o cliente que a transmissão foi concluída.
+> Para notificar o cliente sobre os status das transferências em blocos, o servidor inclui o cabeçalho `Transfer-Encoding: chunked`.
+
+## SPDY - 2009
+
+> Foi criado pela `GOOGLE` novos protocolos alternativos para tornar a web mais rápida e melhorar a sua segurança. Reduzindo as latências das páginas.
+> Isso é uma marca registrada da `Google`e não uma sigla.
+> Sabemos que se aumentarmos a largura de banda, o desempenho da de rede melhora, porém chega em um ponto em que não há muito ganho de desenpenho.
+> Mas, se fizermos o mesmo com a latência, ou seja, se continuarmos diminuindo a latência, o ganho de desempenho é constante.
+> Essa é a idéia central do `SPDY`: Diminuir a latência para aumentar o desempenho da rede.
+
+- Latência: Atraso, ou seja, quanto tempo os dados levam para viajar entre a origem e o destino.
+- Largura de Banda: Quantidade de dados que pode ser transferidos por segundos. (bits por segundo).
+
+> Estes recursos incluiam, multiplexação, compressão, priorização, segurança e etc. Isso deu origin ao `HTTP/2`.
+
+## HTTP/2 - 2015
+
+> Este protocolo foi introduzido e projetado para transporte de conteúdo de baixa latência.
+
+- Binário em vez de Textual.
+
+> Isso é, protocolos binários são mais fácieis de serem revisados pela máquina, mas, não são fáciesi de serem lidos a olho nu. Seus principais blocos de contrução são `Frames` e `Streams`.
+
+### Quadros e Fluxos
+
+> As mensagens `HTTP` agora são compostas por um ou mais quandros. Quadro `HEADERS` para todos os metadados e um quadro `DATA` para o payload, além de vários outros como `SETTINGS`, `RST_STREAM` e `PRIORITY`.
+
+- Multiplexação / Várias solicitações `HTTP` assíncrnas em um única conexão.
+- Compressçao de cabeçalhos usando `HPACK`.
+- Server Push - Múltiplas respostas para uma única solicitação.
+- solicitação Priorização.
+- Segurança.
