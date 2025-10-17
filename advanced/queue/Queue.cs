@@ -12,59 +12,93 @@
 
 // 'Enqueue' adiciona uma valor ao final do 'Queue<T>'.
 // 'Dequeue' remove um elemento mais antigo do inicio do 'Queue<T>'.
-// 'Peek' espiar retorna o elementos mais antifo que está no inicio do 'Queue<T>', mas não remove do 'Queue<T>'.
+// 'Peek' espiar retorna o elementos mais antigo que está no inicio do 'Queue<T>', mas não remove do 'Queue<T>'.
+
+// O princípio de operação de estrutura de fila é FIFO (First In, First Out) o primeiro elemento inserido é o primeiro a ser removido.
 
 // https://learn.microsoft.com/pt-br/dotnet/api/system.collections.generic.queue-1?view=net-9.0
 
-using System.Collections.Generic; 
+using System.Collections.Generic;
 
 namespace QueueExemple {
 
   class Program {
     static void Main() {
-      Queue<string> values = new Queue<string>();
+      Queue<string> queue = new Queue<string>();
 
       // Adiciona elementos ao final da fila.
-      values.Enqueue("one");
-      values.Enqueue("two");
-      values.Enqueue("three");
+      queue.Enqueue("one");
+      queue.Enqueue("two");
+      queue.Enqueue("three");
 
-      // Passando pelos elementos de 'values'.
-      foreach (var value in values) {
-        System.Console.WriteLine(value);
+      // Passando pelos elementos de 'queue'.
+      foreach (var value in queue) {
+        Console.WriteLine(value);
       }
 
-      System.Console.WriteLine("\nDequeuing '{0}'", values.Dequeue());
-      System.Console.WriteLine("Peek at next item to dequeue: {0}", values.Peek());
-      System.Console.WriteLine("Dequeuing '{0}'", values.Dequeue());
+      Console.WriteLine("\nDequeuing '{0}'", queue.Dequeue());
+      Console.WriteLine("Peek at next item to dequeue: {0}", queue.Peek());
+      Console.WriteLine("Dequeuing '{0}'", queue.Dequeue());
 
       // Copiando a 'Queue' á partir da queue já criada.
-      Queue<string> valuesCopy = new Queue<string>(values.ToArray());
+      Queue<string> queueCopy = new Queue<string>(queue.ToArray());
 
-      // Passando pelos elementos copiados de 'values' para 'valuesCopy'.
-      foreach (var valueCopy in valuesCopy) {
-        System.Console.WriteLine("Values of vetor copy: {0}", valueCopy);
+      // Passando pelos elementos copiados de 'queue' para 'queueCopy'.
+      foreach (var valueCopy in queueCopy) {
+        Console.WriteLine("Queue of vetor copy: {0}", valueCopy);
       }
 
       // Verifica se um valor está presente dentro da fila.
-      bool hasProps = valuesCopy.Contains("one");
+      bool hasProps = queueCopy.Contains("one");
 
       if (hasProps) {
-        System.Console.WriteLine("Encontrado");
+        Console.WriteLine("Encontrado");
       } else {
-        System.Console.WriteLine("Não Encontrado");
+        Console.WriteLine("Não Encontrado");
       }
 
       // Pega a quantidade de elementos presentes na fila.
-      int currentValuesCopy = valuesCopy.Count;
-      System.Console.WriteLine(currentValuesCopy);
+      int currentQueueCopy = queueCopy.Count;
+      Console.WriteLine(currentQueueCopy);
 
       // Verifica qual a capacidade de elementos presentes na fila.
-      // int capacityValuesCopy = valuesCopy.Capacity;
-      // System.Console.WriteLine(capacityValuesCopy);
+      // int capacityQueueCopy = queueCopy.Capacity;
+      // Console.WriteLine(capacityQueueCopy);
 
-      // Limpa do o 'valuesCopy'
-      valuesCopy.Clear();
+      // Limpa do o 'queueCopy'
+      queueCopy.Clear();
+    }
+  }
+
+  // Exemplo de uso de uma queue (fila) genérica em CSharp do namespace .Collections.
+  class GenericQueue {
+    public static void Main() {
+      // Criando uma fila genérica utilizando a classe Queue<T>
+      Queue filaGenerica = new Queue();
+
+      // Adicionando elementos na fila genérica
+      filaGenerica.Enqueue("Primeiro");
+      filaGenerica.Enqueue("Segundo");
+      filaGenerica.Enqueue("Terceiro");
+
+      // Exibindo o elemento no início da fila sem removê-lo
+      Console.WriteLine("Elemento no início da fila genérica: " + filaGenerica.Peek());
+
+        // Removendo elementos da fila genérica
+      Console.WriteLine("Removendo: " + filaGenerica.Dequeue());
+      Console.WriteLine("Removendo: " + filaGenerica.Dequeue());
+
+        // Verificando se a fila está vazia
+      Console.WriteLine("A fila está vazia? " + (filaGenerica.Count == 0));
+
+      ExibirFila(filaGenerica);
+    }
+
+    // Método para percorrer e exibir os elementos da fila sem removê-los.
+    public static void ExibirFila(IEnumerable myCollection) { // IEnumerable é uma interface que permite a iteração sobre uma coleção.
+      foreach (Object obj in myCollection) { // Percorre cada objeto na coleção.
+        Console.WriteLine(" {0}", obj);
+      }
     }
   }
 }

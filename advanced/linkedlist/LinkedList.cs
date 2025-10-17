@@ -13,7 +13,7 @@ namespace LinkedList {
 
   class LinkedList {
     static void Main() {
-      // criando um 'vetor' de 'string' já inicializado.
+      // Criando um 'vetor' de 'string' já inicializado.
       string[] words = { "the", "fox", "the", "over", "dog" };
 
       LinkedList<string> linked = new LinkedList<string>(words);
@@ -25,21 +25,21 @@ namespace LinkedList {
 
       // Move o elemento na primeito posição para a última posição.
       LinkedListNode<string> firstElement = linked.First; // Armazena o valor do primeiro elemento.
-      linked.RemoveFirst(); // Remove o primeiro elementos da lista.
+      linked.RemoveFirst(); // Remove o primeiro elemento da lista.
       linked.AddLast(firstElement); // Adiciona o valor armazenado do primeiro elemento ao final da lista.
 
-      // Removendo u último elemento.
+      // Removendo o último elemento.
       linked.RemoveLast();
-      linked.AddLast("yesterday");
+      linked.AddLast("yesterday"); // Adicionando um elemento por último.
 
-      // Adicionando o último elemtento no inicio da lista.
+      // Adicionando o último elemento no inicio da lista.
       LinkedListNode<string> lastElement = linked.Last;
       linked.RemoveLast();
       linked.AddFirst(lastElement);
 
       // Indica o index do último elemento encontrado.
-      LinkedListNode<string> current = linked.FindLast("the");
-      System.Console.WriteLine(current);
+      LinkedListNode<string> current = linked.FindLast("the"); // Busca o último elemento na lista.
+      Console.WriteLine(current);
 
       // Adicionar elementos depois de outro elemento ser adicionado.
       linked.AddAfter(current, "old");
@@ -52,26 +52,27 @@ namespace LinkedList {
       linked.AddBefore(current, "quick");
 
       // Copiando uma LinkedList para um 'vetor' de strings.
-      string[] vetor = new string[linked.Count];
-      linked.CopyTo(vetor, 0);
+      string[] vetor = new string[linked.Count]; // Criando um vetor de strings para ter o mesmo tamanho que o vetor 'linked' atualmente.
+      linked.CopyTo(vetor, 0); // Após a limitação de valores é, por fim, copiados todos os valores de 'linked' para 'vetor' á partir do elemento de index 0.
 
       // Passando pelos items copiados do 'vetor' vindos de 'linked'.
       foreach (string item in vetor) {
-        System.Console.WriteLine(item);
+        Console.WriteLine(item);
       }
 
       // Limpar toda a LinkedList
       linked.Clear();
     }
 
+   // Function created from display the elements of the LinkedList.
     static void Display(LinkedList<string> list, string msg) {
-      System.Console.WriteLine(msg);
+      Console.WriteLine(msg);
 
       foreach (string item in list) {
-        System.Console.Write(item + " ");
+        Console.Write(item + " ");
       }
 
-      System.Console.WriteLine("\n");
+      Console.WriteLine("\n");
     }
   }
 }

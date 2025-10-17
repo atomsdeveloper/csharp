@@ -22,26 +22,26 @@ namespace List {
 
       // Propriedades
       int total = list.Capacity; // Obtém ou define o número de elementos que a estrutura de dados pode conter/sem redimensionar. define list.Capacity = Int32
-      int listLenght = list.Count; // Obtém o número de elementos contidos no 'list'.
-      int itemList = list.Item[0]; // Obtém ou define o elemento no índice especificado. define -> list.Item[0] = "John"
+      int listLenght = list.Count; // Obtém o número de elementos contidos no 'list'. Que neste caso é 1.
+      int itemList = list.Item[0]; // Obtém ou define o elemento no índice especificado. define -> list.Item[0] = "Renan"
 
       // Métodos
       list.Add("Geyse"); // Adiciona
       list.Add("Renan"); // Adiciona elemento na lista.
       list.Contains("Renan"); // Verifica se existe o elemento na lista.
 
-      List<string> otherListCopyFrom = CopyTo(list); // Copia todos os elementos.
+      List<string> otherListCopyFromList = CopyTo(list); // Copia todos os elementos.
 
-      otherListCopyFrom.Find("Renan"); // Pesquisa o elemento e retorna o primeiro encontrado.
-      otherListCopyFrom.GetType(); // Retorna o Type da instância.
-      otherListCopyFrom.IndexOf("Geyse"); // Retorna o Index do elemento encontrado.
-      otherListCopyFrom.Insert(3, "Joyce"); // Insere um elemento na lista passando a posição de Index.
-      otherListCopyFrom.Remove(); // Remove o primeiro elemento da lista.
-      otherListCopyFrom.Sort(); // Classifica os elementos usando comparador padrão.
-      otherListCopyFrom.Reverse(); // Inverte a ordem dos elementos em toda a lista.
+      otherListCopyFromList.Find("Renan"); // Pesquisa o elemento e retorna o primeiro encontrado.
+      otherListCopyFromList.GetType(); // Retorna o Type da instância que neste caso é 'List<string>'.
+      otherListCopyFromList.IndexOf("Geyse"); // Retorna o Index do elemento encontrado que neste caso é 1.
+      otherListCopyFromList.Insert(3, "Joyce"); // Insere um elemento na lista passando a posição de Index.
+      otherListCopyFromList.Remove(); // Remove o primeiro elemento da lista que neste caso é o Renan da linha 21.
+      otherListCopyFromList.Sort(); // Classifica os elementos usando comparador padrão.
+      otherListCopyFromList.Reverse(); // Inverte a ordem dos elementos em toda a lista.
 
 
-      // Percorrendo cada intem da lista.
+      // Percorrendo cada item da lista.
       foreach (string item in list) {
         System.Console.WriteLine(item);
       }

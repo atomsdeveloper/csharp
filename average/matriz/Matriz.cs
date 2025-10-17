@@ -31,9 +31,9 @@ namespace Matriz
             // O primeiro conjunto de chaves '{}' indica que será atribuido valores, à partir disso toda chave '{}' se refere ao indice de linha.
             // E todo valor passado dentro dessa segunda chave que representa a linha, será armazenado nas colunas da 'matriz'.
 
-            //                                      0L          1L
-            int[,] matrizInit = new int[2, 2] { { 10, 20 }, { 30, 40 }};
-            //                                    0C  1C      0C  1C
+            int[,] matrizInit = new int[2, 2] { { 10, 20 },  // 0L
+                                                { 30, 40 }}; // 1L
+            //                                    0C  1C      
 
             System.Console.WriteLine(matrizInit[1, 1]); // 40
             //                                  1L 1C                                       

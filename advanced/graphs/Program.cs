@@ -1,0 +1,5 @@
+﻿// Os gráficos são estruturas de dado caracterizadas por nós e arestas que unem os nós, geralmente usando a notação G = (V, E) onde, V representa o conjunto de nós (vertices) e E representa o conjunto de arestas (edges) que conectam os nós. As arestas podem ser direcionadas (com uma direção específica de um nó para outro) ou não direcionadas (sem direção específica). Na linguagem de programção é representado por matrizes de adjacência ou listas de adjacência.
+
+// Por exemplo: [I, J] = K significa que o nó I está conectado ao nó J com um peso ou valor K, e listas adjacentes são usada para representar grafos esparsos, onde a maioria dos nós não está conectada a muitos outros nós.
+
+// Os gráficos e árvores também podem ser cruzados em largura (BREADTH FIRST) ou em fila profundidade (DEPTH FIRST) com uma pilha.

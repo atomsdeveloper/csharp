@@ -8,7 +8,7 @@ namespace Dictionary {
     static void Main() {
       Dictionary<int, string> dictionary = new Dictionary<int, string>();
 
-      // Forma de adicionar elementos na dicionário.
+      // Forma de adicionar elementos no dicionário.
       dictionary.Add(0, "Renan");
       dictionary.Add(1, "Ruth");
       dictionary.Add(2, "Joyce");

@@ -1,5 +1,5 @@
-﻿// Em herança tudo ocorre nos construtores, ou seja, sempre que determinado atributo herdado precisar receber um valor, estes dados sempre serão passado pelo 'constructor'.
-// Até chagar na sua classe de destino, classe está que declarou e inicializou/ou não um determinado atribuito.
+﻿// Em herança tudo ocorre nos construtores, ou seja, sempre que determinado atributo herdado precisar receber um valor, estes dados sempre serão passado pelo 'constructor' até chagar na sua classe de destino, classe está que declarou e inicializou/ou não um determinado atribuito.
+
 // Vehicle -> Car -> CarCombat / Estas são as classes que são heradas na sequência inserida.
 // Cada classe tem seu próprio atributo e também cada uma deve passar valores para sua classe de herança.
 
